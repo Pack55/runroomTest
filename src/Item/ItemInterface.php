@@ -22,6 +22,10 @@ abstract class ItemInterface
         $this->quality = $quality;
     }
 
+    public function update()
+    {
+    }
+
     public function __toString()
     {
         return "{$this->name}, {$this->sell_in}, {$this->quality}";
@@ -57,7 +61,24 @@ abstract class ItemInterface
         $this->sell_in = $sell_in;
     }
 
-    public function update()
+    public function increaseQuality()
     {
+        $this->quality++;
     }
+
+    public function decreaseQuality()
+    {
+        $this->quality--;
+    }
+
+    public function increaseSellIn()
+    {
+        $this->sell_in++;
+    }
+
+    public function decreaseSellIn()
+    {
+        $this->sell_in--;
+    }
+
 }

@@ -11,7 +11,7 @@ class Item extends ItemInterface
         if ($this->getName() != self::AGEDBRIE and $this->getName() != self::BACKSTAGEPASES) {
             if ($this->getQuality() > self::MINQUALITY) {
                 if ($this->getName() != self::SULFURASHAND) {
-                    $this->setQuality($this->getQuality() - 1);
+                    $this->decreaseQuality();
                 }
             }
         } else {
@@ -20,12 +20,12 @@ class Item extends ItemInterface
                 if ($this->getName() == self::BACKSTAGEPASES) {
                     if ($this->getSellIn() < 11) {
                         if ($this->getQuality() < self::MAXQUALITY) {
-                            $this->setQuality($this->getQuality() + 1);
+                            $this->increaseQuality();
                         }
                     }
                     if ($this->getSellIn() < 6) {
                         if ($this->getQuality() < self::MAXQUALITY) {
-                            $this->setQuality($this->getQuality() + 1);
+                            $this->increaseQuality();
                         }
                     }
                 }
@@ -33,7 +33,7 @@ class Item extends ItemInterface
         }
 
         if ($this->getName() != self::SULFURASHAND) {
-            $this->setSellIn($this->getSellIn() - 1);
+            $this->decreaseSellIn();
         }
 
         if ($this->getSellIn() < 0) {
@@ -41,15 +41,15 @@ class Item extends ItemInterface
                 if ($this->getName() != self::BACKSTAGEPASES) {
                     if ($this->getQuality() > self::MINQUALITY) {
                         if ($this->getName() != self::SULFURASHAND) {
-                            $this->setQuality($this->getQuality() - 1);
+                            $this->decreaseQuality();
                         }
                     }
                 } else {
-                    $this->setQuality($this->getQuality() - $this->getQuality());
+                    $this->setQuality(0);
                 }
             } else {
                 if ($this->getQuality() < self::MAXQUALITY) {
-                    $this->setQuality($this->getQuality() + 1);
+                    $this->increaseQuality();
                 }
             }
         }
