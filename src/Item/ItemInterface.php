@@ -1,6 +1,6 @@
 <?php
 
-namespace Runroom\GildedRose;
+namespace Runroom\GildedRose\Item;
 
 
 abstract class ItemInterface

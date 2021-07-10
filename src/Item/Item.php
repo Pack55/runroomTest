@@ -1,6 +1,6 @@
 <?php
 
-namespace Runroom\GildedRose;
+namespace Runroom\GildedRose\Item;
 
 
 class Item extends ItemInterface
