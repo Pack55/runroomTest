@@ -9,11 +9,9 @@ class BackStagePases extends ItemInterface
 
     public function update()
     {
-        if ($this->getQuality() < self::MAXQUALITY) {
-            $this->increaseQuality();
-        }
+        $this->increaseQuality();
 
-        if($this->getSellIn() <11) {
+        if($this->getSellIn() < 11) {
             $this->increaseQuality();
         }
 
@@ -21,7 +19,7 @@ class BackStagePases extends ItemInterface
             $this->increaseQuality();
         }
 
-        if($this->getSellIn() < 0) {
+        if($this->getSellIn() <= 0) {
             $this->setQuality(0);
         }
 

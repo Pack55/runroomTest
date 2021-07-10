@@ -11,9 +11,6 @@ abstract class ItemInterface
 
     const MAXQUALITY = 50;
     const MINQUALITY = 0;
-    const AGEDBRIE = "Aged Brie";
-    const BACKSTAGEPASES = "Backstage passes to a TAFKAL80ETC concert";
-    const SULFURASHAND = "Sulfuras, Hand of Ragnaros";
 
     function __construct($name, $sell_in, $quality)
     {
