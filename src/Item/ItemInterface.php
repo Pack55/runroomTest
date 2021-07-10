@@ -77,5 +77,4 @@ abstract class ItemInterface
     {
         $this->sell_in--;
     }
-
 }

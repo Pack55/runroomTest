@@ -3,7 +3,6 @@
 namespace Runroom\GildedRose\Item;
 
 
-
 class BackStagePases extends ItemInterface
 {
 

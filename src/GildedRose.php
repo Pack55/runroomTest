@@ -12,9 +12,7 @@ class GildedRose {
 
     function updateItems() {
         foreach ($this->items as $item) {
-
             $item->update();
-
         }
     }
 }
