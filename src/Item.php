@@ -48,4 +48,53 @@ class Item {
         $this->sell_in = $sell_in;
     }
 
+    public function update()
+    {
+        if ($this->getName() != 'Aged Brie' and $this->getName() != 'Backstage passes to a TAFKAL80ETC concert') {
+            if ($this->getQuality() > 0) {
+                if ($this->getName() != 'Sulfuras, Hand of Ragnaros') {
+                    $this->setQuality($this->getQuality() - 1);
+                }
+            }
+        } else {
+            if ($this->getQuality() < 50) {
+                $this->setQuality($this->getQuality() + 1);
+                if ($this->getName() == 'Backstage passes to a TAFKAL80ETC concert') {
+                    if ($this->getSellIn() < 11) {
+                        if ($this->getQuality() < 50) {
+                            $this->setQuality($this->getQuality() + 1);
+                        }
+                    }
+                    if ($this->getSellIn() < 6) {
+                        if ($this->getQuality() < 50) {
+                            $this->setQuality($this->getQuality() + 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        if ($this->getName() != 'Sulfuras, Hand of Ragnaros') {
+            $this->setSellIn($this->getSellIn() - 1);
+        }
+
+        if ($this->getSellIn() < 0) {
+            if ($this->getName() != 'Aged Brie') {
+                if ($this->getName() != 'Backstage passes to a TAFKAL80ETC concert') {
+                    if ($this->getQuality() > 0) {
+                        if ($this->getName() != 'Sulfuras, Hand of Ragnaros') {
+                            $this->setQuality($this->getQuality() - 1);
+                        }
+                    }
+                } else {
+                    $this->setQuality($this->getQuality() - $this->getQuality());
+                }
+            } else {
+                if ($this->getQuality() < 50) {
+                    $this->setQuality($this->getQuality() + 1);
+                }
+            }
+        }
+    }
+
 }
